@@ -1,15 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="stylesheet" src="./src/styles/style.css"></script>
-    <title>Para Para Ela</title>
+    <title>Jogadoras Brasileiras</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/129b440489.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+        <h1>Jogadoras Brasileiras</h1>
+    </header>
+
+    <form id="playerForm">
+        <h3>Adicionar Jogadora</h3>
+        <label for="playerName">Nome:</label><br>
+        <input type="text" id="playerName" required><br>
+
+        <label for="playerPosition">Posição:</label><br>
+        <input type="text" id="playerPosition" required><br>
+
+        <label for="playerClub">Clube:</label><br>
+        <input type="text" id="playerClub" required><br>
+
+        <label for="playerPhoto">Foto (URL):</label><br>
+        <input type="text" id="playerPhoto"><br>
+
+        <label for="playerGoals">Gols:</label><br>
+        <input type="number" id="playerGoals" min="0" value="0"><br>
+
+        <label for="playerAssists">Assistências:</label><br>
+        <input type="number" id="playerAssists" min="0" value="0"><br>
+
+        <label for="playerGames">Jogos:</label><br>
+        <input type="number" id="playerGames" min="0" value="0"><br>
+
+        <button type="submit"><i class="fa-solid fa-plus"></i> Adicionar Jogadora</button>
+    </form>
+
+    <hr>
+    <h3>Pesquisar / Filtrar</h3>
+    <input type="text" id="searchInput" placeholder="Buscar por nome ou posição">
+    <select id="filterClub">
+        <option value="">Todos os clubes</option>
+    </select>
+    <button type="button" onclick="sortPlayers('nome')">Ordenar por Nome</button>
+    <button type="button" onclick="sortPlayers('posicao')">Ordenar por Posição</button>
+
+    <h2>Jogadoras</h2>
+
+    <div id="jogadorasList"></div>
+
     <script src="./src/scripts/script.js"></script>
 </body>
 </html>
