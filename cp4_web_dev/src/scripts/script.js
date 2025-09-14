@@ -3,7 +3,7 @@ let jogadoras = [
     "nome": "Andressa Alves",
     "posicao": "Meio-campo",
     "clube": "Corinthians",
-    "foto": "https://example.com/andressa.jpg",
+    "foto": "src/assets/ft_andressa.png",
     "gols": 15,
     "assistencias": 10,
     "jogos": 28,
@@ -13,7 +13,7 @@ let jogadoras = [
     "nome": "Dayana Rodríguez",
     "posicao": "Meio-campo",
     "clube": "Corinthians",
-    "foto": "https://example.com/dayana.jpg",
+    "foto": "src/assets/ft_dayana.png",
     "gols": 5,
     "assistencias": 12,
     "jogos": 30,
@@ -23,7 +23,7 @@ let jogadoras = [
     "nome": "Mariza",
     "posicao": "Zagueira",
     "clube": "Corinthians",
-    "foto": "https://example.com/mariza.jpg",
+    "foto": "src/assets/ft_mariza.png",
     "gols": 2,
     "assistencias": 1,
     "jogos": 32,
@@ -33,7 +33,7 @@ let jogadoras = [
     "nome": "Thaís Regina",
     "posicao": "Zagueira",
     "clube": "Corinthians",
-    "foto": "https://example.com/thais.jpg",
+    "foto": "src/assets/ft_thais.png",
     "gols": 1,
     "assistencias": 2,
     "jogos": 25,
@@ -43,7 +43,7 @@ let jogadoras = [
     "nome": "Letícia Teles",
     "posicao": "Zagueira",
     "clube": "Corinthians",
-    "foto": "https://example.com/leticia.jpg",
+    "foto": "src/assets/ft_leticia.png",
     "gols": 0,
     "assistencias": 0,
     "jogos": 18,
@@ -78,16 +78,19 @@ function displayPlayers() {
             jogadorasElement.classList.add('card-jogadoras');
 
             jogadorasElement.innerHTML = `
-                <img src="${player.foto}" alt="${player.nome}" style="max-width:150px; border-radius:8px;">
-                <h3>${player.nome}</h3>
-                <p><strong>Posição:</strong> ${player.posicao}</p>
-                <p><strong>Clube:</strong> ${player.clube}</p>
-                <p><strong>Gols:</strong> ${player.gols} | <strong>Assistências:</strong> ${player.assistencias} | <strong>Jogos:</strong> ${player.jogos}</p>
-                <button onclick="toggleFavorite(${index})">${player.favorita ? '❤️ Favorita' : '🤍 Favorita'}</button>
-                <button onclick="editPlayer(${index})" style="margin-left:10px; color:blue;">✏️ Editar</button>
-                <button onclick="deletePlayer(${index})" style="margin-left:10px; color:red;">🗑️ Deletar</button>
-                <hr style="margin:20px 0;">
+            <img src="${player.foto}" alt="${player.nome}" style="max-width:150px; border-radius:8px;">
+            <h3>${player.nome}</h3>
+            <p><strong>Posição:</strong> ${player.posicao}</p>
+            <p><strong>Clube:</strong> ${player.clube}</p>
+            <p><strong>Gols:</strong> ${player.gols} | <strong>Assistências:</strong> ${player.assistencias} | <strong>Jogos:</strong> ${player.jogos}</p>
+            <div class="card-buttons">
+            <button class="btn-fav" onclick="toggleFavorite(${index})">${player.favorita ? '❤️ Favorita' : '🤍 Favorita'}</button>
+            <button class="btn-edit" onclick="editPlayer(${index})">✏️ Editar</button>
+            <button class="btn-delete" onclick="deletePlayer(${index})">🗑️ Deletar</button>
+            </div>
+            <hr style="margin:20px 0;">
             `;
+
 
             jogadorasList.append(jogadorasElement);
         }
